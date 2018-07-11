@@ -17,6 +17,7 @@ export class AppRoutes {
                     const mtgService = new MtgService(config);
                     const card = await mtgService.getRandomCard();
 
+                    response.type('application/json');
                     response.send(card);
                 }),
             },
@@ -27,6 +28,7 @@ export class AppRoutes {
                     const mtgService = new MtgService(config);
                     const cards = await mtgService.search(request.params.query);
 
+                    response.type('application/json');
                     response.send(cards);
                 }),
             },
