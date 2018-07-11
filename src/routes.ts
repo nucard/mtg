@@ -11,7 +11,7 @@ export class AppRoutes {
     public static getRoutes(config: Config): RouteDefintion[] {
         return [
             {
-                path: '/mtg/cards/random',
+                path: '/cards/random',
                 method: 'GET',
                 handler: asyncHandler(async (request, response) => {
                     const mtgService = new MtgService(config);
@@ -21,7 +21,7 @@ export class AppRoutes {
                 }),
             },
             {
-                path: '/mtg/cards/query/:query',
+                path: '/cards/query/:query',
                 method: 'GET',
                 handler: asyncHandler(async (request, response) => {
                     const mtgService = new MtgService(config);

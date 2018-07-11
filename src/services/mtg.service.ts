@@ -7,13 +7,13 @@ export class MtgService {
             name: "Geist of Saint Traft",
             rarity: "Mythic Rare",
             cost: [
-                `${this.config.baseUrl}/assets/images/cost-1.png`,
-                `${this.config.baseUrl}/assets/images/cost-w.png`,
-                `${this.config.baseUrl}/assets/images/cost-u.png`,
+                'https://i.imgur.com/NBSZQvc.png',
+                'https://i.imgur.com/xLyb6ri.png',
+                'https://i.imgur.com/QrGKXbz.png',
             ],
             types: ["Legendary", "Creature"],
             subtypes: ["Spirit", "Cleric"],
-            thumbnail: "./assets/images/geist.jpg",
+            thumbnail: "https://i.imgur.com/rhfXhgn.png",
             text: `Hexproof _(This creature can't be the target of spells or abilities your opponents control.)_
 
 Whenever Geist of Saint Traft attacks, put a 4/4 white Angel creature token with flying on the battlefield tapped and attacking.
@@ -95,12 +95,12 @@ Exile that token at the end of combat.`,
             name: "Apothecary Geist",
             rarity: "Common",
             cost: [
-                `${this.config.baseUrl}/assets/images/cost-1.png`,
-                `${this.config.baseUrl}/assets/images/cost-w.png`,
+                'https://i.imgur.com/NBSZQvc.png',
+                'https://i.imgur.com/xLyb6ri.png',
             ],
             types: ["Creature"],
             subtypes: ["Spirit"],
-            thumbnail: "./assets/images/apothecary-geist.png",
+            thumbnail: "https://i.imgur.com/26NSZGk.png",
             printings: [
                 {
                     image: 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409740&type=card',
@@ -111,13 +111,13 @@ Exile that token at the end of combat.`,
             name: "Geist Snatch",
             rarity: "Common",
             cost: [
-                `${this.config.baseUrl}/assets/images/cost-1.png`,
-                `${this.config.baseUrl}/assets/images/cost-u.png`,
-                `${this.config.baseUrl}/assets/images/cost-u.png`,
+                'https://i.imgur.com/NBSZQvc.png',
+                'https://i.imgur.com/QrGKXbz.png',
+                'https://i.imgur.com/QrGKXbz.png',
             ],
             types: ["Instant"],
             subtypes: ["Spirit", "Cleric"],
-            thumbnail: "./assets/images/geist-snatch.jpg",
+            thumbnail: "https://i.imgur.com/X4gtxsw.png",
             printings: [
                 {
                     image: 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=240021&type=card',
@@ -128,12 +128,12 @@ Exile that token at the end of combat.`,
             name: "Howlgeist",
             rarity: "Uncommon",
             cost: [
-                `${this.config.baseUrl}/assets/images/cost-1.png`,
-                `${this.config.baseUrl}/assets/images/cost-g.png`,
+                'https://i.imgur.com/NBSZQvc.png',
+                'https://i.imgur.com/YjaF6Wa.png',
             ],
             types: ["Creature"],
             subtypes: ["Spirit", "Wolf"],
-            thumbnail: "./assets/images/howlgeist.jpg",
+            thumbnail: "https://i.imgur.com/eemUGZJ.png",
             text: `Creatures with power less than Howlgeist's power can't block it.
 
 Undying _(When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)_`,
@@ -148,11 +148,11 @@ Undying _(When this creature dies, if it had no +1/+1 counters on it, return it 
             name: "Geistcatcher's Rig",
             rarity: "Rare",
             cost: [
-                `${this.config.baseUrl}/assets/images/cost-1.png`,
+                'https://i.imgur.com/NBSZQvc.png',
             ],
             types: ["Artifact", "Creature"],
             subtypes: ["Construct"],
-            thumbnail: "./assets/images/geistcatchers-rig.jpg",
+            thumbnail: "https://i.imgur.com/Mx8j6Gr.png",
             printings: [
                 {
                     image: 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=234445&type=card',

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "start": "tsc && node dist/index.js",
-    "heroku:start": "cp src/assets dist/assets && node dist/index.js"
+    "heroku:start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
