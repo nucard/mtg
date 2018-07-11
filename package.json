@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jammerware/nucard-mtg.git"
+    "url": "git+https://github.com/nucard/mtg.git"
   },
   "keywords": [
     "nucard",
@@ -19,9 +19,9 @@
   "author": "Jammerware",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jammerware/nucard-mtg/issues"
+    "url": "https://github.com/nucard/mtg/issues"
   },
-  "homepage": "https://github.com/jammerware/nucard-mtg#readme",
+  "homepage": "https://github.com/nucard/mtg#readme",
   "devDependencies": {
     "typescript": "^2.9.2"
   },
