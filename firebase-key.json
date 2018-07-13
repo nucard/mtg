@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "nucard-mtg",
+  "private_key_id": "d43e2b084c1f8243930d28f757018d23c60a7e00",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCl1rqdbYLYumuJ\nz7sSv5hAdNWvZO4i5anj3WQukkIqy96UJe36fgnR77rVea0GwTMQ4tJeVNZL6qtg\nrij5B5npqoKTKZCVlLmVqWoNrLzMXXkwzX8FbaOE4dJbv4J8QgSIMqQ1FSniRUUy\nmOvMs7hXrxVlkN7xQG+JKs+KK+aBXQ37eSVq0rqa58nzIeadefaX2tzqj+0IcdAZ\n5OUMn8ZnX1zIjNX5/IK716PFIAl3vzPjjJHM45nmV4jFFoQsDh6p2boG8IJ3Zc1H\nnv6FKp1zC31EMp7essqJbiuO833jVUzHsNwcBHspLd85eD7d3KeBWjHO2wbW7Nld\nZh2kHmMJAgMBAAECggEACk3VOoLbZmvu0pk9nmSZKSgZPtSelzx92dKfruUXh2Ez\nazEQIEhEg+7JRQpSXeETMzFksMfEqOLj0xX/Jbn7LjGR+2LRwPmErm/gTwk0kd4c\n8ZNTGRs+1brSPzEfAml3rp625TVzbMOxEPu/avCfu5L9WVou//5o77ThQEyJ/e+Y\nl8Jl+DGHoSKcVupwfqcNbUrE1ADYGMHGSs3cAjpwtzjG7/kPxRJBtZY5DGEZfI4Q\np11Qdv1k9Iyz8YWkEatJzDw/SSFDXc5IxZUcXnv/1o+nNaBfNSzQcvoJodp6WnR1\n3vTjvo6RE2bwVMrtaCD2T9orZnQIxtQjKvrjOlTAAQKBgQDVlO4W+O+qoDD6CGyV\nhJnTBgDxnfLF/yPniHe3qi70t0N3G8UpG5cdG8/n24H6KFHhXRnLQDMJaZOUY3i2\nbZHGt5jmO3qYlvdv9C9ySV4ts4YY8AUGZLBPd5kNDGDu+J/mGmuZXmfjHUMTUi1D\ndKQQwDdiiSUE9wTXrmWLZq9oCQKBgQDGxmsCttJ57wFoNrri4hUx4c64lC2+Up3v\n0w0wZY5O0TWpxu7r2r+ASoiTAqE2L0RBlirdah7292FYlFCAVWkDey1+dWwTLUc5\nX6O7SNofHZqn5Q2bJUMB32GnkefLdpo4sZ+fEPSh+1GqeXIS234X9epGbnw3go1Z\nwTsGmHfjAQKBgQC/SmEoEBNP5aOX/T2LeLTw7JqhzI5oyUgWEgLva6wcn5r8LdIb\nLEve1U8TYWV7cOtNBj6Y7MoJLxbvu1udQGtk6IE4C6OU0PmSushX+uAv3G9JHIfT\nnxDOS9a3ehPDVMiZpaYjOgufvVCbGGnT1b8wBYhVZ3HRjZA3wEnQXcrSSQKBgQCX\n0JeOfR+H7Vk/xP07p7zUWkhOhS3ivKrPrnvWSNpFrFe2EbANBwdX7pUc4tdJ0RPq\nm8ylSxXXPd1lj/Fj8te/xuZaPUiL5PsPANLGib++IBgsvy6DHhRta7TkDPXiWfUz\n88Wb8ZFF3fLjptnPOUC3ACUsIdpRcy6OLJzuTqjSAQKBgFu9XT16wgAYI8ghHHp7\nktKirqexdHKq3O9Ic3aRaNfmXDcTp5uK/LozjhY7Bd3PBLlmfuJhtxYaF2G2vyIu\nV+DsDFuFy9dfucF0JBqpPGO9ZJl5IWINUp0lxBEHFK+3P0itd4yf3zfjF0SpUHqo\ng6x3kJUdprE9BrFlG9wjc6ox\n-----END PRIVATE KEY-----\n",
+  "client_email": "nucard-mtg-api@nucard-mtg.iam.gserviceaccount.com",
+  "client_id": "109859324138612328081",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nucard-mtg-api%40nucard-mtg.iam.gserviceaccount.com"
+}

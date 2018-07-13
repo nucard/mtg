@@ -1,5 +1,7 @@
 import { NcCard } from '@nucard/models';
 import { Config } from '../config';
+import { FirebaseService } from './firebase.service';
+import * as algoliasearch from 'algoliasearch';
 
 export class MtgService {
     private _cards: NcCard[] = [
@@ -16,8 +18,8 @@ export class MtgService {
             thumbnail: "https://i.imgur.com/rhfXhgn.png",
             text: `Hexproof _(This creature can't be the target of spells or abilities your opponents control.)_
 
-Whenever Geist of Saint Traft attacks, put a 4/4 white Angel creature token with flying on the battlefield tapped and attacking.
-Exile that token at the end of combat.`,
+    Whenever Geist of Saint Traft attacks, put a 4/4 white Angel creature token with flying on the battlefield tapped and attacking.
+    Exile that token at the end of combat.`,
             printings: [
                 {
                     artist: 'Igor Kieryluk',
@@ -136,7 +138,7 @@ Exile that token at the end of combat.`,
             thumbnail: "https://i.imgur.com/eemUGZJ.png",
             text: `Creatures with power less than Howlgeist's power can't block it.
 
-Undying _(When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)_`,
+    Undying _(When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)_`,
             printings: [
                 {
                     artist: "David Rapoza",
@@ -161,20 +163,34 @@ Undying _(When this creature dies, if it had no +1/+1 counters on it, return it 
         },
     ];
 
-    constructor(private config: Config) { }
+    constructor(
+        private config: Config,
+        private firebaseService: FirebaseService) { }
 
     public async search(query: string): Promise<NcCard[]> {
         return new Promise<NcCard[]>((resolve, reject) => {
-            if (!query || query.length < 2) {
-                resolve([]);
-                return;
-            }
+            const results = [];
+            const algoliaClient = algoliasearch('LEUAE3WAEY', 'd7e0086333ddb5cb86625a50f727b427');
+            const index = algoliaClient.initIndex('cards');
 
-            const cards = this._cards.filter(c => {
-                return c.name && c.name.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) > -1;
+            index.search({ query }, (err: any, content: any) => {
+                if (err) {
+                    throw err;
+                }
+
+                console.log(content.hits);
+                resolve(this._cards);
             });
 
-            resolve(cards);
+            // const snapshot = await this
+            //     .firebaseService
+            //     .getFirebaseClient()
+            //     .collection('cards')
+            //     .where('name', '==', query);
+
+            // snpashot.forEach(doc => {
+            //     results.push(doc.data());
+            // });
         });
     }
 
