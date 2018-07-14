@@ -19,7 +19,7 @@ export class MtgService {
                     throw err;
                 }
 
-                resolve(this._cards);
+                resolve(content.hits);
             });
         });
     }
