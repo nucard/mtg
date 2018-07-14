@@ -25,7 +25,7 @@ export class MtgService {
             const algoliaClient = algoliasearch(this.config.algoliaAppId, this.config.algoliaApiKey);
             const index = algoliaClient.initIndex('cards');
 
-            index.search({ query }, (err: any, content: any) => {
+            index.search({ query, hitsPerPage: 10 }, (err: any, content: any) => {
                 if (err) {
                     throw err;
                 }
