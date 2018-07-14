@@ -2,6 +2,10 @@
   "name": "nucard-mtg",
   "version": "1.0.0",
   "description": "My MtG REST API, compliant with the NuCard API standard.",
+  "engines": {
+    "node": "8.11.3",
+    "npm": "6.1.x"
+  },
   "main": "dist/index",
   "scripts": {
     "test": "test",
