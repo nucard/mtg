@@ -4,8 +4,28 @@ import { FirebaseService } from './firebase.service';
 import * as algoliasearch from 'algoliasearch';
 
 export class MtgService {
-    private _cards: NcCard[] = [
-        {
+    constructor(
+        private config: Config,
+        private firebaseService: FirebaseService) { }
+
+    public async search(query: string): Promise<NcCard[]> {
+        return new Promise<NcCard[]>((resolve, reject) => {
+            const results = [];
+            const algoliaClient = algoliasearch(this.config.algoliaAppId, this.config.algoliaApiKey);
+            const index = algoliaClient.initIndex('cards');
+
+            index.search({ query }, (err: any, content: any) => {
+                if (err) {
+                    throw err;
+                }
+
+                resolve(this._cards);
+            });
+        });
+    }
+
+    public async getRandomCard(): Promise<NcCard> {
+        return Promise.resolve({
             name: "Geist of Saint Traft",
             rarity: "Mythic Rare",
             cost: [
@@ -92,110 +112,6 @@ export class MtgService {
                     ],
                 },
             ],
-        },
-        {
-            name: "Apothecary Geist",
-            rarity: "Common",
-            cost: [
-                'https://i.imgur.com/NBSZQvc.png',
-                'https://i.imgur.com/xLyb6ri.png',
-            ],
-            types: ["Creature"],
-            subtypes: ["Spirit"],
-            thumbnail: "https://i.imgur.com/26NSZGk.png",
-            printings: [
-                {
-                    image: 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409740&type=card',
-                },
-            ],
-        },
-        {
-            name: "Geist Snatch",
-            rarity: "Common",
-            cost: [
-                'https://i.imgur.com/NBSZQvc.png',
-                'https://i.imgur.com/QrGKXbz.png',
-                'https://i.imgur.com/QrGKXbz.png',
-            ],
-            types: ["Instant"],
-            subtypes: ["Spirit", "Cleric"],
-            thumbnail: "https://i.imgur.com/X4gtxsw.png",
-            printings: [
-                {
-                    image: 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=240021&type=card',
-                },
-            ],
-        },
-        {
-            name: "Howlgeist",
-            rarity: "Uncommon",
-            cost: [
-                'https://i.imgur.com/NBSZQvc.png',
-                'https://i.imgur.com/YjaF6Wa.png',
-            ],
-            types: ["Creature"],
-            subtypes: ["Spirit", "Wolf"],
-            thumbnail: "https://i.imgur.com/eemUGZJ.png",
-            text: `Creatures with power less than Howlgeist's power can't block it.
-
-    Undying _(When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)_`,
-            printings: [
-                {
-                    artist: "David Rapoza",
-                    image: 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=240102&type=card',
-                },
-            ],
-        },
-        {
-            name: "Geistcatcher's Rig",
-            rarity: "Rare",
-            cost: [
-                'https://i.imgur.com/NBSZQvc.png',
-            ],
-            types: ["Artifact", "Creature"],
-            subtypes: ["Construct"],
-            thumbnail: "https://i.imgur.com/Mx8j6Gr.png",
-            printings: [
-                {
-                    image: 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=234445&type=card',
-                },
-            ],
-        },
-    ];
-
-    constructor(
-        private config: Config,
-        private firebaseService: FirebaseService) { }
-
-    public async search(query: string): Promise<NcCard[]> {
-        return new Promise<NcCard[]>((resolve, reject) => {
-            const results = [];
-            const algoliaClient = algoliasearch('LEUAE3WAEY', 'd7e0086333ddb5cb86625a50f727b427');
-            const index = algoliaClient.initIndex('cards');
-
-            index.search({ query }, (err: any, content: any) => {
-                if (err) {
-                    throw err;
-                }
-
-                console.log(content.hits);
-                resolve(this._cards);
-            });
-
-            // const snapshot = await this
-            //     .firebaseService
-            //     .getFirebaseClient()
-            //     .collection('cards')
-            //     .where('name', '==', query);
-
-            // snpashot.forEach(doc => {
-            //     results.push(doc.data());
-            // });
         });
-    }
-
-    public async getRandomCard(): Promise<NcCard> {
-        const index = Math.floor(Math.random() * Math.floor(this._cards.length));
-        return this._cards[index];
     }
 }
