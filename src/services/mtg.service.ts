@@ -1,4 +1,4 @@
-import { NcCard } from '@nucard/models';
+import { NcCard, NcRulesSymbol } from '@nucard/models';
 import { Config } from '../config';
 import { FirebaseService } from './firebase.service';
 import * as algoliasearch from 'algoliasearch';
@@ -6,7 +6,18 @@ import * as algoliasearch from 'algoliasearch';
 export class MtgService {
     constructor(
         private config: Config,
-        private firebaseService: FirebaseService) { }
+        private firebaseService: FirebaseService = new FirebaseService()) { }
+
+    public getRulesSymbols(): Promise<NcRulesSymbol[]> {
+        return Promise.resolve([
+            { symbol: '1', image: 'https://i.imgur.com/NBSZQvc.png' },
+            { symbol: 'B', image: 'https://i.imgur.com/ZLyxX8l.png' },
+            { symbol: 'G', image: 'https://i.imgur.com/YjaF6Wa.png' },
+            { symbol: 'R', image: 'https://i.imgur.com/p4XdKcn.png' },
+            { symbol: 'U', image: 'https://i.imgur.com/QrGKXbz.png' },
+            { symbol: 'W', image: 'https://i.imgur.com/xLyb6ri.png' },
+        ]);
+    }
 
     public async search(query: string): Promise<NcCard[]> {
         return new Promise<NcCard[]>((resolve, reject) => {
@@ -26,6 +37,7 @@ export class MtgService {
 
     public async getRandomCard(): Promise<NcCard> {
         return Promise.resolve({
+            id: "geistofsainttraft",
             name: "Geist of Saint Traft",
             rarity: "Mythic Rare",
             cost: [
